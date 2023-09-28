@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Configuration des routes
 app.get('/', (req, res) => {
-  res.render('pages/home', { title: 'Hello Twig!', name: 'Adrien'}, );
+  res.render('pages/home', { title: 'Hello Twig!', name: 'Yanis'}, );
 });
 
 // Utilisation des routes définies dans user.js
