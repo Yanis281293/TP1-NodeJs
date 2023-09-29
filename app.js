@@ -1,5 +1,5 @@
 var express = require('express');
-const { bizareDB } = require('./config/database');
+const { connectDB } = require('./config/database');
 const PORT = process.env.PORT || '3030';
 const twig = require('twig');
 var app = express();
@@ -9,7 +9,7 @@ const User = require('./models/User');
 const userRoutes = require('./routes/user');
 
 // Connexion à la base de données
-bizareDB();
+connectDB();
 
 // Configuration du moteur de template (twig)
 app.set('view engine', 'twig');
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 // Utilisation des routes définies dans user.js
 app.use('/', userRoutes);
 
-app.listen(3333, () => {
+app.listen(3010, () => {
 	console.log(`🚀🚀 Lancement avec succès du server`);
 });
 

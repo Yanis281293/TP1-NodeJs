@@ -6,7 +6,7 @@ const MONGODB_URI=`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PAS
 /**
  * Fonction pour établir la connexion à la base de données.
  */
-const bizareDB = async () => {
+const connectDB = async () => {
     try {
         await mongoose.connect(MONGODB_URI, {
             useNewUrlParser: true,
@@ -18,4 +18,4 @@ const bizareDB = async () => {
     }
 };
 
-module.exports = { bizareDB };
+module.exports = { connectDB };

@@ -31,7 +31,7 @@ Créez un fichier `.env` et ajoutez-y les variables d'environnement nécessaires
 
 ### Étape 4: Modification de `database.js` 🛠️
 
-1. Changez le nom de la fonction `bizareDB` pour quelque chose de plus explicite.
+1. Changez le nom de la fonction `connectDB` pour quelque chose de plus explicite.
 2. Utilisez l'URI de MongoDB depuis `.env`.
 3. Réfléchissez à comment vous pouvez sécuriser cette URI.
 
