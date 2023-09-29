@@ -1,24 +1,36 @@
- {% extends 'layout/base.twig' %}
+{% extends 'layout/base.twig' %}
 
-    {% block title %}Modifier l'Utilisateur{% endblock %}
+{% block title %}Modifier l'Utilisateur
+{% endblock %}
 
-    {% block content %}
-        <div class="container">
-            <h1 class="mt-5 mb-3">Modifier l'Utilisateur 🛠️</h1>
-            <form action="/edit/{{ user._id }}" method="post">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Nom d'utilisateur</label>
-                    <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Mettre à jour</button>
-            </form>
-        </div>
-    {% endblock %}
+{% block content %}
+	<div class="container">
+    
+		<h1 class="mt-5 mb-3">Modifier l'Utilisateur 🛠️</h1>
+
+		<div class="text-center mb-5">
+			<img src="/avatar/{{ user._id }}" alt="{{ user.username }}" width="200" style="border-radius: 40%;">
+		</div>
+
+		<form action="/edit/{{ user._id }}" method="post" enctype="multipart/form-data">
+			<div class="mb-3">
+				<label for="username" class="form-label">Nom d'utilisateur</label>
+				<input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" required>
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label">Email</label>
+				<input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+			</div>
+			<div class="mb-3">
+				<label for="password" class="form-label">Mot de passe</label>
+				<input type="password" class="form-control" id="password" name="password" required>
+			</div>
+			<div class="mb-3">
+				<label for="avatar" class="form-label">Avatar</label>
+				<input type="file" class="form-control" id="avatar" name="avatar">
+			</div>
+			<button type="submit" class="btn btn-primary">Mettre à jour</button>
+		</form>
+
+	</div>
+{% endblock %}

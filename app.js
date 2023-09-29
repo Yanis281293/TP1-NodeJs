@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 app.use('/', userRoutes);
 
 app.listen(3010, () => {
-	console.log(`🚀🚀 Lancement avec succès du server`);
+	console.log(`⭐⭐🚀🚀 Lancement avec succès du server 🚀🚀⭐⭐`);
 });
 
 module.exports = app;
